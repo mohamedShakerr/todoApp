@@ -1,9 +1,15 @@
 package com.shaker.todoServer.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 import java.util.Objects;
 
+@Entity
 public class Todo {
+    @Id
+    @GeneratedValue
     private long id;
     private String username;
     private String description;
@@ -17,6 +23,8 @@ public class Todo {
         this.targetDate = targetDate;
         this.isDone = isDone;
     }
+
+    public Todo(){}
 
     public long getId() {
         return id;
